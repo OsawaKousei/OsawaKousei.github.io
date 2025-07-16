@@ -1,39 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight, Tag } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 
 export default function Blogs() {
   const blogPosts = [
     {
-      title: "Next.js 14とServer Actionsで作るモダンなWebアプリケーション",
-      excerpt: "Next.js 14の新機能Server Actionsを使用して、より効率的でパフォーマンスの高いWebアプリケーションを構築する方法を解説します。",
-      date: "2024-01-15",
-      category: "Next.js",
-      readTime: "5分",
-      featured: true
+      title: "ignition gazebo + Rviz2の開発環境構築",
+      excerpt: "ROS 2のシミュレーション環境を構築するための手順を解説します。シミュレーター上で自律走行ロボットを動かすまでの流れを詳しく説明します。",
+      date: "2023-12-19",
+      category: "ROS 2",
+      featured: true,
+      url: "https://qiita.com/N622/items/6ca879f8b1f9d667e561"
     },
     {
-      title: "TypeScriptの型安全性を活用したReact開発のベストプラクティス",
-      excerpt: "TypeScriptを使用したReact開発において、型安全性を最大限活用するための実践的なテクニックとパターンを紹介します。",
-      date: "2024-01-08",
+      title: "ワンクリックでウェブサイトを本文抽出->MDでDLするブラウザ拡張機能の作成",
+      excerpt: "ワンクリックでウェブサイトの本文を抽出し、Markdown形式でダウンロードできるブラウザ拡張機能の開発を紹介します。クロスブラウザ対応で、簡単にウェブサイトの内容を保存できます。",
+      date: "205-07-15",
       category: "TypeScript",
-      readTime: "8分",
-      featured: true
+      featured: true,
+      url: "https://qiita.com/N622/items/ffa7896076fe60b15204"
     },
     {
-      title: "Docker Composeを使用した開発環境の構築",
-      excerpt: "複数のサービスを含むWebアプリケーションの開発環境を、Docker Composeを使用して効率的に構築する方法を説明します。",
-      date: "2024-01-02",
-      category: "DevOps",
-      readTime: "6分",
-      featured: false
+      title: "WSLでlibrealsenseをソースビルドしてRealsenseを使用可能にする",
+      excerpt: "WSL環境でlibrealsenseをソースからビルドし、Realsenseカメラを使用可能にする手順を解説します。pyrealsense2も含めた設定方法を紹介します。",
+      date: "2025-02-14",
+      category: "WSL",
+      featured: false,
+      url: "https://qiita.com/N622/items/e9ba5b0188b2a86bd1fa"
     },
     {
-      title: "TailwindCSSとHeadless UIで作るアクセシブルなコンポーネント",
-      excerpt: "TailwindCSSとHeadless UIを組み合わせて、美しくアクセシブルなUIコンポーネントを作成するテクニックを紹介します。",
-      date: "2023-12-28",
-      category: "CSS",
-      readTime: "7分",
-      featured: false
+      title: "Ubuntu22.04でros2-for-unityの環境構築",
+      excerpt: "UnityでROS 2を使用するための環境構築手順を解説します。UnityとROS 2の連携をスムーズに行う方法を紹介します。",
+      date: "2024-11-26",
+      category: "ROS 2",
+      featured: false,
+      url: "https://qiita.com/N622/items/09a2593f114627102b66"
     }
   ];
 
@@ -46,7 +46,7 @@ export default function Blogs() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Latest Blog Posts</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Blog Posts</h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               技術的な学びや開発の経験を記事として共有しています。
             </p>
@@ -67,7 +67,6 @@ export default function Blogs() {
                     <Calendar className="h-4 w-4 mr-1" />
                     {new Date(post.date).toLocaleDateString('ja-JP')}
                   </div>
-                  <span className="text-slate-400 text-sm">{post.readTime}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors line-clamp-2">
                   {post.title}
@@ -75,13 +74,15 @@ export default function Blogs() {
                 <p className="text-slate-300 mb-6 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
-                <Button
-                  variant="ghost"
-                  className="text-blue-400 hover:text-blue-300 hover:bg-slate-700 p-0 h-auto font-medium group"
-                >
-                  続きを読む
-                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a href={post.url}>
+                  <Button
+                    variant="ghost"
+                    className="text-blue-400 hover:text-blue-300 hover:bg-slate-700 p-0 h-auto font-medium group"
+                  >
+                    続きを読む
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
               </article>
             ))}
           </div>
@@ -99,7 +100,6 @@ export default function Blogs() {
                     <span className="text-xs font-medium text-blue-400 bg-blue-400/10 px-2 py-1 rounded">
                       {post.category}
                     </span>
-                    <span className="text-slate-400 text-sm">{post.readTime}</span>
                   </div>
                   <h4 className="text-white font-bold mb-2 line-clamp-2">{post.title}</h4>
                   <p className="text-slate-300 text-sm mb-3 line-clamp-2">{post.excerpt}</p>
@@ -107,21 +107,25 @@ export default function Blogs() {
                     <span className="text-slate-400 text-sm">
                       {new Date(post.date).toLocaleDateString('ja-JP')}
                     </span>
-                    <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 p-0 h-auto">
-                      Read
-                    </Button>
+                    <a href={post.url}>
+                      <Button variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 p-0 h-auto">
+                        Read
+                      </Button>
+                    </a>
                   </div>
                 </article>
               ))}
             </div>
             <div className="text-center">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white"
-              >
-                View All Posts
-              </Button>
+              <a href="https://qiita.com/N622" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-slate-600 text-slate-300 bg-transparent hover:bg-slate-700 hover:text-white hover:border-slate-500"
+                >
+                  View All Posts
+                </Button>
+              </a>
             </div>
           </div>
         </div>
