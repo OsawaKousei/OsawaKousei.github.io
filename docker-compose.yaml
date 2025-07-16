@@ -1,19 +1,19 @@
 volumes:
-  OsawaKousei.github.io-node-modules:
+  portfolio-node-modules:
 
 services:
-  OsawaKousei.github.io-frontend:
+  portfolio-frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
     volumes:
       - ./frontend/app:/app
-      - OsawaKousei.github.io-node-modules:/app/node_modules
+      - portfolio-node-modules:/app/node_modules
     ports:
       - "3000:3000"
     networks:
-      - OsawaKousei.github.io-app-network
+      - portfolio-app-network
 
 networks:
-  OsawaKousei.github.io-app-network:
+  portfolio-app-network:
     driver: bridge
