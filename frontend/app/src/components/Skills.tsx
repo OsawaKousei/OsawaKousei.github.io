@@ -1,36 +1,34 @@
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Frontend",
+      category: "Application",
       icon: "🎨",
       skills: [
-        { name: "React", level: 90, color: "bg-blue-500" },
-        { name: "Next.js", level: 85, color: "bg-slate-700" },
-        { name: "TypeScript", level: 88, color: "bg-blue-600" },
-        { name: "Vue.js", level: 75, color: "bg-green-500" },
-        { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" }
+        { name: "Next.js", level: 75, color: "bg-slate-700" },
+        { name: "WPF/Prism", level: 50, color: "bg-blue-600" },
+        { name: "Unity", level: 20, color: "bg-yellow-500" },
+        { name: "electron", level: 15, color: "bg-green-500" },
       ]
     },
     {
       category: "Backend",
       icon: "⚙️",
       skills: [
-        { name: "Node.js", level: 85, color: "bg-green-600" },
-        { name: "Python", level: 80, color: "bg-yellow-500" },
-        { name: "PostgreSQL", level: 75, color: "bg-blue-700" },
-        { name: "MongoDB", level: 70, color: "bg-green-700" },
-        { name: "GraphQL", level: 65, color: "bg-pink-500" }
+        { name: "ROS2", level: 80, color: "bg-green-600" },
+        { name: "PyTorch", level: 80, color: "bg-yellow-500" },
+        { name: "FastAPI", level: 75, color: "bg-blue-700" },
+        { name: "PostgreSQL", level: 50, color: "bg-green-700" },
+        { name: "NestJS", level: 20, color: "bg-pink-500" }
       ]
     },
     {
-      category: "DevOps & Tools",
+      category: "Infrastructure",
       icon: "🛠️",
       skills: [
-        { name: "Docker", level: 78, color: "bg-blue-600" },
-        { name: "AWS", level: 72, color: "bg-orange-500" },
+        { name: "Docker", level: 85, color: "bg-blue-600" },
+        { name: "AWS", level: 80, color: "bg-orange-500" },
         { name: "Git", level: 90, color: "bg-red-500" },
-        { name: "Figma", level: 85, color: "bg-purple-500" },
-        { name: "Jest", level: 75, color: "bg-red-600" }
+        { name: "Azure", level: 15, color: "bg-purple-500" },
       ]
     }
   ];
@@ -43,7 +41,7 @@ export default function Skills() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Skills & Expertise</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              モダンな技術スタックを活用して、高品質なWebアプリケーションを開発しています。
+              幅広い技術スタックを持ち、様々なプロジェクトでの経験があります。
             </p>
           </div>
 
@@ -81,10 +79,10 @@ export default function Skills() {
           {/* Additional Info */}
           <div className="mt-16 text-center">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border border-slate-200">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">継続的な学習</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">最新の興味</h3>
               <p className="text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                技術の進歩に合わせて常に新しいスキルを習得し、最新のベストプラクティスを取り入れています。
-                現在はAI/ML技術とクラウドアーキテクチャの学習に重点を置いています。
+                これまでは主にAI・ロボティクスにおけるバックエンド開発を中心に行ってきましたが、
+                最近ではフロントエンドやインフラ周りの技術にも興味を持ち、幅広い技術スタックを学んでいます。
               </p>
             </div>
           </div>
