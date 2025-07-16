@@ -17,7 +17,13 @@ import {
   SidebarMenuButton,
   SidebarProvider,
 } from "@/components/ui/sidebar";
-import { User, Briefcase, Code, FileText, UserCircle, Home as HomeIcon } from "lucide-react";
+import {
+  Briefcase,
+  Code,
+  FileText,
+  UserCircle,
+  Home as HomeIcon,
+} from "lucide-react";
 
 export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -33,9 +39,9 @@ export default function Home() {
   return (
     <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
       <div className="min-h-screen w-full bg-white flex">
-        <Sidebar 
+        <Sidebar
           className={`border-r border-slate-200 transition-all duration-300 flex-shrink-0 ${
-            sidebarOpen ? 'w-64' : 'w-0 overflow-hidden'
+            sidebarOpen ? "w-64" : "w-0 overflow-hidden"
           }`}
         >
           <SidebarHeader className="p-4 border-b border-slate-200">
@@ -52,7 +58,11 @@ export default function Home() {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <item.icon className="h-5 w-5" />
-                      <span className={`${sidebarOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}>
+                      <span
+                        className={`${
+                          sidebarOpen ? "opacity-100" : "opacity-0"
+                        } transition-opacity duration-200`}
+                      >
                         {item.label}
                       </span>
                     </a>
@@ -63,9 +73,11 @@ export default function Home() {
           </SidebarContent>
         </Sidebar>
 
-        <div className={`flex-1 w-full overflow-x-hidden transition-all duration-300 ${
-          sidebarOpen ? 'ml-0' : 'ml-0'
-        }`}>
+        <div
+          className={`flex-1 w-full overflow-x-hidden transition-all duration-300 ${
+            sidebarOpen ? "ml-0" : "ml-0"
+          }`}
+        >
           <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
           <main className="w-full">
             <AboutMe />
