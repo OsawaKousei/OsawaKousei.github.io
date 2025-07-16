@@ -1,30 +1,59 @@
-export default function Header() {
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+
+interface HeaderProps {
+  onMenuClick: () => void;
+}
+
+export default function Header({ onMenuClick }: HeaderProps) {
   return (
-    <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-      <div className="container mx-auto px-6 h-20 flex items-center">
-        <nav className="flex justify-between items-center w-full">
-          <div className="text-xl font-bold text-blue-400">Company</div>
-          <div className="hidden md:flex space-x-8 items-center">
-            <a
-              href="#contents"
-              className="text-gray-300 hover:text-white transition-colors font-medium"
+    <header className="bg-slate-900 border-b border-slate-700 sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80 w-full">
+      <div className="w-full px-6 h-16 flex items-center">
+        <div className="flex justify-between items-center w-full">
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onMenuClick}
+              className="text-slate-300 hover:text-white hover:bg-slate-800 transition-all duration-200"
             >
-              ソリューション
-            </a>
+              <Menu className="h-6 w-6" />
+            </Button>
+            <div className="text-xl font-bold text-slate-100">Portfolio</div>
+          </div>
+          <div className="hidden md:flex space-x-6 items-center">
             <a
               href="#about"
-              className="text-gray-300 hover:text-white transition-colors font-medium"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
             >
-              会社概要
+              About
             </a>
             <a
-              href="#contact"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              href="#works"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
             >
-              お問い合わせ
+              Works
+            </a>
+            <a
+              href="#skills"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
+            >
+              Skills
+            </a>
+            <a
+              href="#blogs"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
+            >
+              Blog
+            </a>
+            <a
+              href="#profile"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
+            >
+              Profile
             </a>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );
