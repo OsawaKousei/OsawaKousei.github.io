@@ -4,36 +4,52 @@ import { ExternalLink, Github } from "lucide-react";
 export default function Works() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Next.js、TypeScript、Stripeを使用したフルスタックECサイト。管理画面、決済機能、在庫管理を実装。",
-      image: "🛒",
-      tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      category: "Web Application",
-      featured: true
-    },
-    {
-      title: "Task Management App",
-      description: "React、Node.js、MongoDBを使用したタスク管理アプリケーション。リアルタイム同期とコラボレーション機能。",
+      title: "NEDO NEP 開拓コース 2025 FR",
+      description: "NEP開拓コースFRとして模倣学習を用いたロボット制御の研究開発及び事業化に取り組んでいます。",
       image: "📝",
-      tech: ["React", "Node.js", "MongoDB", "Socket.io"],
-      category: "SaaS Application",
-      featured: true
+      tech: ["Python","LeRobot", "Genesis", "ROS 2"],
+      category: "Biz Dev",
+      featured: true,
+      codeUrl: "https://github.com/orgs/KyotoVLATech/repositories",
+      demoUrl: "https://nep.nedo.go.jp/selected/4e3c2d5a-de3f-4caf-ad31-239a104f091e",
+      codeText: "GitHub",
+      demoText: "Site"
     },
     {
-      title: "Analytics Dashboard",
-      description: "データ可視化ダッシュボード。Chart.js、D3.js、Pythonを使用したリアルタイム分析システム。",
+      title: "NHK 学生ロボコン 2025",
+      description: "NHK学生ロボコン2025に京都大学代表チームとして参加。ロボットアームの制御とスマホコントローラー開発を担当。",
+      image: "🤖",
+      tech: ["C", "C++", "Kotlin", "CubeIDE", "ROS 2", "Android Studio"],
+      category: "Robotics",
+      featured: true,
+      codeUrl: "https://github.com/OsawaKousei/nhk_2025_arm_ctrl",
+      demoUrl: "https://www.kikaiken.org/activities.html",
+      codeText: "GitHub",
+      demoText: "機械研ウェブサイト"
+    },
+    {
+      title: "AI異常検知デスクトップアプリケーション(CLOSED)",
+      description: "教師無しベースの異常検知を行うデスクトップアプリケーション。インターンで開発し、提案作成から開発PM、客先調整まで担当。",
       image: "📊",
-      tech: ["Vue.js", "Python", "Chart.js", "Docker"],
-      category: "Data Visualization",
-      featured: false
+      tech: ["Python", "C#", "PyTorch", "WPF"],
+      category: "AI ・ Desktop Application",
+      featured: false,
+      codeUrl: null,
+      demoUrl: null,
+      codeText: "Code",
+      demoText: "Demo"
     },
     {
-      title: "Mobile App (React Native)",
-      description: "クロスプラットフォームモバイルアプリ。位置情報、プッシュ通知、オフライン機能を実装。",
-      image: "📱",
-      tech: ["React Native", "Expo", "Firebase", "Redux"],
-      category: "Mobile Application",
-      featured: false
+      title: "お問い合わせChatボット(CLOSED)",
+      description: "商品に関するお問い合わせを自動で受け付けるチャットボット。インフラ構築からフロント・バックエンドの開発まで担当。",
+      image: "🌐",
+      tech: ["TypeScript", "Python", "Next.js", "FastAPI", "Docker", "AWS"],
+      category: "AI ・ Web Application",
+      featured: false,
+      codeUrl: null,
+      demoUrl: null,
+      codeText: "Code",
+      demoText: "Expo Demo"
     }
   ];
 
@@ -48,7 +64,7 @@ export default function Works() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Featured Works</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              これまでに開発した代表的なプロジェクトをご紹介します。技術的な挑戦と創造性を組み合わせています。
+              これまでに取り組んだ代表的なプロジェクトをご紹介します。
             </p>
           </div>
 
@@ -83,14 +99,31 @@ export default function Works() {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="text-slate-600 border-slate-300 hover:bg-slate-100">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
+                    {project.codeUrl && (
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="text-slate-600 border-slate-300 hover:bg-slate-100"
+                        asChild
+                      >
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          {project.codeText}
+                        </a>
+                      </Button>
+                    )}
+                    {project.demoUrl && (
+                      <Button 
+                        size="sm" 
+                        className="bg-blue-600 hover:bg-blue-700"
+                        asChild
+                      >
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          {project.demoText}
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -113,19 +146,37 @@ export default function Works() {
                   <h4 className="font-bold text-slate-900 mb-2">{project.title}</h4>
                   <p className="text-slate-600 text-sm mb-3">{project.description}</p>
                   <div className="flex flex-wrap gap-1 mb-3">
-                    {project.tech.slice(0, 3).map((tech, techIndex) => (
+                    {project.tech.map((tech, techIndex) => (
                       <span key={techIndex} className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="ghost" className="text-slate-500 p-1">
-                      <Github className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" className="text-slate-500 p-1">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    {project.codeUrl && (
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="text-slate-500 p-1"
+                        asChild
+                      >
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {project.demoUrl && (
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="text-slate-500 p-1"
+                        asChild
+                      >
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               ))}
