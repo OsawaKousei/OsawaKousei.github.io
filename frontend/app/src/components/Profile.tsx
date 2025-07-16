@@ -82,7 +82,7 @@ export default function Profile() {
                 {
                   year: "2023",
                   title: "Junior Engineer",
-                  company: "株式会社 hYBiTZ",
+                  company: "株式会社 HYBiTZ",
                   description: "Webアプリケーションの開発に参加し、基本的な開発スキルを習得。"
                 },
                 {
