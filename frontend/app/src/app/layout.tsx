@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Company Name - Modern Solutions",
+  title: "n622 Portfolio",
   description:
-    "AI-powered solutions for your business. We provide innovative technology solutions to drive growth and efficiency.",
+    "A portfolio showcasing my work, skills, and experiences.",
 };
 
 export default function RootLayout({
