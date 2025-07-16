@@ -7,7 +7,7 @@ export default function Profile() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Profile</h2>
             <p className="text-slate-600 text-lg">
-              技術と創造性を組み合わせて、価値のあるソリューションを生み出しています。
+              幅広い領域での経験を持つフルスタック開発者です。開発とビジネスの両面から価値を提供します。
             </p>
           </div>
 
@@ -18,8 +18,8 @@ export default function Profile() {
               <h3 className="text-2xl font-bold text-slate-900 mb-6">About Me</h3>
               <div className="space-y-4 text-slate-600">
                 <p className="leading-relaxed">
-                  Web開発者として5年以上の経験を持ち、フロントエンドからバックエンドまで幅広い技術領域をカバーしています。
-                  ユーザー体験を重視した設計と、保守性の高いコードの作成を心がけています。
+                  約３年の実務経験を持ち、フロントエンドからバックエンドまで幅広い技術領域をカバーしています。
+                  プロトタイピングから本番環境の運用まで、全てのフェーズでの経験があります。
                 </p>
                 <p className="leading-relaxed">
                   新しい技術への探求心を持ち続け、常にベストプラクティスを追求しています。
@@ -35,15 +35,15 @@ export default function Profile() {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-slate-600">Location</span>
-                    <span className="text-slate-900 font-medium">Tokyo, Japan</span>
+                    <span className="text-slate-900 font-medium">Kyoto, Japan</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-600">Experience</span>
-                    <span className="text-slate-900 font-medium">5+ years</span>
+                    <span className="text-slate-900 font-medium">2+ years</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-600">Languages</span>
-                    <span className="text-slate-900 font-medium">Japanese, English</span>
+                    <span className="text-slate-900 font-medium">Japanese</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-600">Availability</span>
@@ -56,12 +56,11 @@ export default function Profile() {
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Interests</h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Web Performance",
-                    "UI/UX Design",
-                    "Open Source",
                     "AI/ML",
+                    "Robotics",
+                    "Open Source",
+                    "Multi Platform Development",
                     "Cloud Architecture",
-                    "Accessibility"
                   ].map((interest, index) => (
                     <span
                       key={index}
@@ -81,34 +80,28 @@ export default function Profile() {
             <div className="space-y-8">
               {[
                 {
+                  year: "2023",
+                  title: "Junior Engineer",
+                  company: "株式会社 hYBiTZ",
+                  description: "Webアプリケーションの開発に参加し、基本的な開発スキルを習得。"
+                },
+                {
                   year: "2024",
-                  title: "Senior Full Stack Developer",
-                  company: "Tech Startup",
-                  description: "リードデベロッパーとして、チームの技術的意思決定とアーキテクチャ設計を担当。"
+                  title: "AI Engineer",
+                  company: "Prox Industries株式会社",
+                  description: "AIエンジニアとして、機械学習モデルの開発とAI搭載アプリケーションの構築を担当。"
                 },
                 {
-                  year: "2022",
-                  title: "Full Stack Developer",
-                  company: "Web Agency",
-                  description: "企業向けWebアプリケーションの設計・開発・運用を担当。"
-                },
-                {
-                  year: "2020",
-                  title: "Frontend Developer",
-                  company: "Digital Agency",
-                  description: "React/Vue.jsを使用したWebサイト・アプリケーションの開発に従事。"
-                },
-                {
-                  year: "2019",
-                  title: "Career Start",
-                  company: "Self-Learning",
-                  description: "独学でプログラミングを学習し、Web開発の基礎を習得。"
+                  year: "2025",
+                  title: "Lead Engineer",
+                  company: "株式会社 ONIXION (current position)",
+                  description: "リードエンジニアとして、チームの技術的意思決定とアーキテクチャ設計を担当。"
                 }
               ].map((item, index) => (
                 <div key={index} className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                      {item.year.slice(-2)}
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      {item.year}
                     </div>
                   </div>
                   <div className="flex-grow bg-white p-6 rounded-xl shadow-md border border-slate-200">
