@@ -31,9 +31,13 @@ export default function Home() {
   ];
 
   return (
-    <SidebarProvider>
-      <div className="min-h-screen bg-white flex">
-        <Sidebar className="border-r border-slate-200">
+    <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
+      <div className="min-h-screen w-full bg-white flex">
+        <Sidebar 
+          className={`border-r border-slate-200 transition-all duration-300 flex-shrink-0 ${
+            sidebarOpen ? 'w-64' : 'w-0 overflow-hidden'
+          }`}
+        >
           <SidebarHeader className="p-4 border-b border-slate-200">
             <h2 className="text-lg font-bold text-slate-900">Navigation</h2>
           </SidebarHeader>
@@ -48,7 +52,9 @@ export default function Home() {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <item.icon className="h-5 w-5" />
-                      <span>{item.label}</span>
+                      <span className={`${sidebarOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}>
+                        {item.label}
+                      </span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -57,9 +63,11 @@ export default function Home() {
           </SidebarContent>
         </Sidebar>
 
-        <div className="flex-1">
+        <div className={`flex-1 w-full overflow-x-hidden transition-all duration-300 ${
+          sidebarOpen ? 'ml-0' : 'ml-0'
+        }`}>
           <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
-          <main>
+          <main className="w-full">
             <AboutMe />
             <Works />
             <Skills />

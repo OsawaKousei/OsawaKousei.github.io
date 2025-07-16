@@ -41,9 +41,9 @@ export default function Works() {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="works" className="py-20 bg-slate-50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+    <section id="works" className="py-20 bg-slate-50 w-full">
+      <div className="w-full px-6">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Featured Works</h2>

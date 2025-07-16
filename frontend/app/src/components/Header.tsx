@@ -7,15 +7,15 @@ interface HeaderProps {
 
 export default function Header({ onMenuClick }: HeaderProps) {
   return (
-    <header className="bg-slate-900 border-b border-slate-700 sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80">
-      <div className="container mx-auto px-6 h-16 flex items-center">
+    <header className="bg-slate-900 border-b border-slate-700 sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80 w-full">
+      <div className="w-full px-6 h-16 flex items-center">
         <div className="flex justify-between items-center w-full">
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="icon"
               onClick={onMenuClick}
-              className="text-slate-300 hover:text-white hover:bg-slate-800"
+              className="text-slate-300 hover:text-white hover:bg-slate-800 transition-all duration-200"
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -45,6 +45,12 @@ export default function Header({ onMenuClick }: HeaderProps) {
               className="text-slate-300 hover:text-white transition-colors font-medium"
             >
               Blog
+            </a>
+            <a
+              href="#profile"
+              className="text-slate-300 hover:text-white transition-colors font-medium"
+            >
+              Profile
             </a>
           </div>
         </div>

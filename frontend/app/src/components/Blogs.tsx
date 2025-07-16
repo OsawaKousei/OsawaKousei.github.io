@@ -41,9 +41,9 @@ export default function Blogs() {
   const otherPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <section id="blogs" className="py-20 bg-slate-900">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+    <section id="blogs" className="py-20 bg-slate-900 w-full">
+      <div className="w-full px-6">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Latest Blog Posts</h2>
